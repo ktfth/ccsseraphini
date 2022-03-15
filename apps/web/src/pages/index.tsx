@@ -47,7 +47,11 @@ export const getServerSideProps: GetServerSideProps<Props> = async (ctx) => {
     ? 'http'
     : 'https';
 
-  const url = `${httpProtocol}://${ctx.req.headers.host}/api/tweets?query=${query}`;
+  const compoundedQuery = ctx.query.query
+    ? `${query} ${ctx.query.query}`
+    : query;
+
+  const url = `${httpProtocol}://${ctx.req.headers.host}/api/tweets?query=${compoundedQuery}`;
 
   const response = await fetch(url);
   if (response.status !== 200) {

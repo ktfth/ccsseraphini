@@ -4,6 +4,7 @@ import { ActionButtons } from './ActionButtons';
 import { DonateEth } from './DonateEth';
 import { DonateSol } from './DonateSol';
 import { DonatePix } from './pix/DonatePix';
+import { Search } from './Search';
 
 export const Home = () => {
   return (
@@ -60,6 +61,7 @@ export const Home = () => {
           <DonateEth />
           <DonateSol />
           <DonatePix />
+          <Search />
         </Flex>
       </Flex>
     </Flex>
